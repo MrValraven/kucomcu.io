@@ -74,12 +74,10 @@ const Welcome = () => {
               Ethereum
             </div>
             <div className={`sm:rounded-bl-2xl ${companyCommonStyles}`}>
-              Web 3.0
+              Governance
             </div>
             <div className={companyCommonStyles}>Low Fees</div>
-            <div className={`rounded-br-2xl ${companyCommonStyles}`}>
-              Blockchain
-            </div>
+            <div className={`rounded-br-2xl ${companyCommonStyles}`}>IoT</div>
           </div>
         </div>
 
@@ -94,7 +92,9 @@ const Welcome = () => {
               </div>
               <div>
                 <p className="text-white font-light text-sm">
-                  {shortenAddress(currentAccount)}
+                  {shortenAddress(currentAccount) === "..."
+                    ? "Address"
+                    : shortenAddress(currentAccount)}
                 </p>
                 <p className="text-white font-semibold text-lg mt-1">
                   Ethereum (Ropsten Testnet)
