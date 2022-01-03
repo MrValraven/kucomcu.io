@@ -97,7 +97,7 @@ const Welcome = () => {
                   {shortenAddress(currentAccount)}
                 </p>
                 <p className="text-white font-semibold text-lg mt-1">
-                  Ethereum
+                  Ethereum (Ropsten Testnet)
                 </p>
               </div>
             </div>

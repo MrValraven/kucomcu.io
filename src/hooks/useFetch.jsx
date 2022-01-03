@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const APIKEY = import.meta.env.GIPHY_API_KEY;
+const API_KEY = import.meta.env.GIPHY_API_KEY;
 
 const useFetch = ({ keyword }) => {
   const [gifUrl, setGifUrl] = useState("");
@@ -8,11 +8,12 @@ const useFetch = ({ keyword }) => {
   const fetchGifs = async () => {
     try {
       const response = await fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&q=${keyword
+        `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword
           .split(" ")
           .join("")}&limit=1`
       );
       const { data } = await response.json();
+      console.log(data);
 
       setGifUrl(data[0]?.images?.downsized_medium.url);
     } catch (error) {
